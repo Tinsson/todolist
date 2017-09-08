@@ -8,6 +8,7 @@ class Listbox extends Component{
         onDelup: PropTypes.func
     }
 
+
     constructor(props){
         super(props);
         this.handleDelList = this.handleDelList.bind(this);
