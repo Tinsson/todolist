@@ -20,3 +20,19 @@ class App extends Component {
 }
 
 export default App;
+
+
+const spy = function(fn){
+    var calls = [];
+    var f = function(){
+        let arg = arguments;
+        var obj = {
+            args: [...arguments],
+            result: fn.apply(this,arguments)
+        }
+        calls.push(obj)
+        return obj.result
+    }
+    f.calls = calls
+    return f;
+}
